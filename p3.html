@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temperature Convertor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="temp.css">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPNukC1iJ0PnnYU7Xfe-d0J4tatOkvfKjZNg&usqp=CAU">
+  </head>
+  <style>
+    #container{
+    background-color: aqua;
+    height: 1000px;
+    text-align: center;
+}
+  </style>
+  <body>
+    
+    <div id="container">
+        <h1>Temperature Convertor</h1>
+        <div class="input-group m-1">
+            <button class="input-group-text"  >celcius</button>
+            <input type="number" value="0" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" id="cel"  >
+        
+          </div>
+          
+          <div class="input-group ">
+            <input type="number" value="32" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" id="fah">
+            <button class="input-group-text" >farenheiht</button>
+            </div>
+         
+    </div>
+    <script>
+
+        var cel=document.getElementById("cel")
+        var fah=document.getElementById("fah")
+        cel.addEventListener('input',function(){
+            let c=this.value;
+            let f=(c*9/5)+32;
+            fah.value=f;
+        })
+        fah.addEventListener('input',function(){
+           let f=this.value;
+           let c=(f-32)*(9/5);
+           cel.value=c;
+        })
+    </script>
+  </body>
+</html>
